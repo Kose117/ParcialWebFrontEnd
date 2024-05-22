@@ -1,0 +1,48 @@
+<h2>Crear Nuevo Libro</h2>
+<form (ngSubmit)="crearLibro()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" [(ngModel)]="nuevoLibro.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="autor">Autor:</label>
+    <input id="autor" [(ngModel)]="nuevoLibro.autor" name="autor" required>
+  </div>
+  <div>
+    <label for="fechaEscritura">Fecha de Escritura:</label>
+    <input id="fechaEscritura" [(ngModel)]="nuevoLibro.fechaEscritura" name="fechaEscritura" required>
+  </div>
+  <div>
+    <label for="numeroEdicion">Número de Edición:</label>
+    <input id="numeroEdicion" [(ngModel)]="nuevoLibro.numeroEdicion" name="numeroEdicion" type="number" required>
+  </div>
+  <div>
+    <label for="precio">Precio:</label>
+    <input id="precio" [(ngModel)]="nuevoLibro.precio" name="precio" type="number" step="0.01" required>
+  </div>
+  <div>
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" [(ngModel)]="nuevoLibro.tipo" name="tipo" required>
+      <option value="Entretenimiento">Entretenimiento</option>
+      <option value="Pedagógico">Pedagógico</option>
+    </select>
+  </div>
+  <div>
+    <label for="famaEscritor">Fama del Escritor:</label>
+    <select id="famaEscritor" [(ngModel)]="nuevoLibro.famaEscritor" name="famaEscritor" required>
+      <option value="Alta">Alta</option>
+      <option value="Media">Media</option>
+      <option value="Baja">Baja</option>
+    </select>
+  </div>
+  <button type="submit">Crear Libro</button>
+</form>
+
+<div>
+  <h2>Lista de Libros</h2>
+  <ul>
+    <li *ngFor="let libro of libros">
+      {{ libro.nombre }} - {{ libro.autor }} - {{ libro.fechaEscritura }} - {{ libro.numeroEdicion }} - {{ libro.precio }} - {{ libro.tipo }} - {{ libro.famaEscritor }}
+    </li>
+  </ul>
+</div>
