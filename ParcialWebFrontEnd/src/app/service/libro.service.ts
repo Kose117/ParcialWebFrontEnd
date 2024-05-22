@@ -8,6 +8,7 @@ import { Libro } from '../models/libro.model';
 })
 export class LibroService {
   private apiUrl = 'http://localhost:8080/api/libros'; // URL del backend
+ 
 
   constructor(private http: HttpClient) { }
 

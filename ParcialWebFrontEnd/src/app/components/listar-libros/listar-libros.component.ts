@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LibroService } from '../../services/libro.service'; // Asegúrate de que el path sea correcto
+import { LibroService } from '../../services/libro.service'; 
 import { Libro } from '../../models/libro.model';
 
 @Component({
