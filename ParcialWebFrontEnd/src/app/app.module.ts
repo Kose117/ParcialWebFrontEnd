@@ -1,23 +1,24 @@
-import { NgModule, importProvidersFrom } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { ListarLibrosComponent } from './components/listar-libros/listar-libros.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    ListarLibrosComponent
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule,
-    RouterModule,
-    RouterModule.forRoot([
-      { path: 'listar-libros', component: ListarLibrosComponent },
-      { path: '', redirectTo: '/listar-libros', pathMatch: 'full' }
-    ])
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent] 
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

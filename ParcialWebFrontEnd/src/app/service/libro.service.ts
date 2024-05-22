@@ -18,4 +18,16 @@ export class LibroService {
   crearLibro(libro: Libro): Observable<Libro> {
     return this.http.post<Libro>(this.apiUrl, libro);
   }
+
+  actualizarLibro(id: number, libro: Libro): Observable<Libro> {
+    return this.http.put<Libro>(`${this.apiUrl}/${id}`, libro);
+  }
+
+  eliminarLibro(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  obtenerLibroPorId(id: number): Observable<Libro> {
+    return this.http.get<Libro>(`${this.apiUrl}/${id}`);
+  }
 }
